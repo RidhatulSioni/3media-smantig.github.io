@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3MEDIA I SMAN 3 GORONTALO</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Akar Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/akar-icons-fonts/1.1.22/css/akar-icons.css"
+        integrity="sha512-xM54SoWdWHNrNSYzPt1Wfsg5dyaIk0e7/biNh0jIR+pdaoWLfEAs50ig7ysS0ywbN79lrAow53uHtK3joebijA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .banner {
+            background-image: url('images/Foto Bersama 3MEDIA.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .banner p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 80px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-title {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .author {
+            margin-bottom: 10px;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .blog-excerpt {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .read-more {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 1024px) {
+            .blog-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 70%;
+            max-height: 80%;
+            overflow-y: auto;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts here -->
+<nav>
+    <div class="nav-bar">
+      <i class="bx bx-menu sidebarOpen"></i>
+      <span class="logo navLogo"><a href="index.html">3MEDIA</a></span>
+      <div class="menu">
+        <div class="logo-toggle">
+          <span class="logo"><a href="index.html">3MEDIA</a></span>
+          <i class="bx bx-x siderbarClose"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li class="dropdown">
+            <a href="Tentang Kami.html">Tentang Kami<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="Tentang Kami.html">Visi Misi</a></li>
+              <li><a href="Program Kerja.html">Program Kerja</a></li>
+              <li><a href="gallery.html">Dokumentasi</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="blogs.html">Berita<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="blogs.html">Info 3media</a></li>
+              <li><a href="Info Smantig.html">Info Smantig</a></li>
+            </ul>
+          </li>
+          <li><a href="/Belanja/Website/index.html">Belanja</a></li>
+          <li><a href="/contact.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+        <div class="searchBox">
+          <div class="searchToggle">
+            <i class="bx bx-x cancel"></i>
+            <i class="bx bx-search search"></i>
+          </div>
+          <div class="search-field">
+            <input type="text" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- header section ends here -->`
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>INFO SMANTIG</h1>
+            <p>KUMPULAN SEPUTAR MENGENAI SMANTIG</p>
+        </div>
+    </section>
+
+    <!-- Blog Container -->
+    <div class="blog-container">
+        <div class="blog-card" onclick="openBlog(this)">
+            <h2 class="blog-title">Berita 1</h2>
+            <div class="image-container">
+                <img src="images/WhatsApp Image 2024-09-22 at 08.38.16_07c561e7.jpg" alt="Gambar Berita 1">
+            </div>
+            <p class="author">Oleh <span class="blue">M Hilal Lato</span></p>
+            <p class="blog-excerpt">LOMBA KREASI BARIS BERBARIS SMANTIG SABET JUARA</p>
+            <div class="full-content" style="display:none;">
+                Gorontalo — Prestasi yang membanggakan diraih oleh siswa dan siswi SMA Negeri 3 Gorontalo. Mereka mendapatkan juara 3 kompetisi LKBB ( lomba kreasi baris berbaris) di tingkat Provinsi! Dan yang meraih juara 1 dan 2 adalah SMA Terpadu Wira Bhakti Gorontalo
+
+Pada Kamis(12/09./2024) kemarin dikabarkan bahwa siswa siswi menjadi terbaik 3 pada lomba LKBB se-Provinsi Gorontalo, hal ini tentu sangat membanggakan SMAN 3 Gorontalo karena mengingat bahwa SMAN 3 Gorontalo bukanlah sekolah yang menerapkan sistem militer. Akan tetapi dengan ketekunan dalam latihan dan pantang menyerah membuat SMAN 3 Gorontalo menang pada lomba tersebut.
+
+“Saya selaku Kepala SMAN 3 Gorontalo sangat bangga atas prestasi yang telah diraih oleh siswa maupun siswi, jangan mudah menyerah diusahakan pada tahun tahun yang akan mendatang SMAN 3 menjadi terbaik 1 pada lomba LKBB ini, dan saya berharap dengan adanya prestasi prestasi ini dapat memotivasi siswa siswi lain”. Ujar Dr. Syaiful Kadir, M.Pd (Kepala SMA Negeri 3 Gorontalo).
+
+Dengan adanya LKBB ini diharapkan dapat menumbuhkan rasa sabar dan korsa/kompak,karena mereka latihan di bawah teriknya matahari sehingga menumbuhkan rasa sabar, dan pada lomba LKBB ini salah satu aspek yang dinilai adalah variasi variasi gerakan sehingga mereka harus melatih kekompakan.
+
+Yulius Hulukati, S.Pd berkata, “ Alhamdulillah, atas berkat Allah SWT dan kegigihan para siswa sehingga SMAN 3 kembali menjuarai LKBB di tingkat Provinsi, tentu sebagai pelatih begitu senang rasanya. Saya berpesan bagi adik adik jangan pernah berkecil hati, walaupun kita juara 3 saya dan guru guru lainya begitu senang mendengar informasi tersebut”.
+
+            </div>
+            <button class="read-more">Baca Selengkapnya</button>
+        </div>
+
+        <div class="blog-card" onclick="openBlog(this)">
+            <h2 class="blog-title">Berita 2</h2>
+            <div class="image-container">
+                <img src="images/Foto 1.jpg" alt="Gambar Berita 2">
+            </div>
+            <p class="author">Oleh <span class="blue">M Hilal Lato</span></p>
+            <p class="blog-excerpt">Judul singkat berita kedua...</p>
+            <div class="full-content" style="display:none;">
+                Siswa-siswi dari SMA Negeri 3 Gorontalo kembali menorehkan prestasi gemilang di tingkat nasional. Dalam ajang Kihajar STEM dan Festival Lomba Seni Siswa Nasional (FL2SN) kategori Tari Kreasi, mereka berhasil meraih juara 3. Pada upacara penghargaan yang digelar di halaman sekolah, siswa-siswi pemenang menerima medali serta hadiah berupa uang tunai Rp15.000.000,-. Kepala sekolah turut hadir memberikan penghargaan langsung kepada para pemenang, yang disambut dengan penuh antusias oleh siswa dan guru yang hadir. Prestasi ini menjadi bukti bahwa SMA Negeri 3 Gorontalo terus mendukung dan mengembangkan potensi siswa dalam bidang akademik maupun seni.
+            </div>
+            <button class="read-more">Baca Selengkapnya</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="blog-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="">
+            <p id="modal-author"></p>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+
+    <!-- footer section starts hare  -->
+
+    <footer>
+        <div class="about-us">
+            <div class="logo">
+                <img src="images/Logo Smantig.png" alt="Logo 3MEDIA">
+            </div>
+
+            <p class="paragraph">
+                &copy; 2024 <span>3MEDIA</span> SMANTIG.
+            </p>
+            
+            <div class="icons">
+                <div class="icon">
+                    <a href="https://www.facebook.com/hubmas.smantig"><i class="ai-facebook-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.instagram.com/smantig.3media/"><i class="ai-instagram-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.youtube.com/@smantig.3media"><i class="ai-youtube-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <h4>Tentang Kami :</h4>
+            <a href="blogs.html">Blog Kami</a>
+            <a href="#">Belanja</a>
+            <a href="contact.html">Hubungi Kami</a>
+        </div>
+        <div class="links">
+            <h4>Informasi Kontak :</h4>
+            <a href="https://wa.link/pib3cf"><i class="ai-phone"></i> +6281242942733  I Jeron</a>
+            <a href="https://wa.link/3r43ms"><i class="ai-phone"></i> +6289507880230 I M Hilal</a>
+            <a href="https://maps.app.goo.gl/jDUzgDySUcFvezQj9"><i class="ai-location"></i> SMA NEGERI 3 GORONTALO</a>
+        </div>
+    </footer>
+
+    <!-- footer section ends hare  -->
+     
+    <script>
+        function openBlog(card) {
+            const modal = document.getElementById('blog-modal');
+            const title = card.querySelector('.blog-title').textContent;
+            const imageSrc = card.querySelector('img').src;
+            const author = card.querySelector('.author').textContent;
+            const content = card.querySelector('.full-content').textContent;
+
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-image').src = imageSrc;
+            document.getElementById('modal-author').textContent = author;
+            document.getElementById('modal-content').textContent = content;
+
+            modal.style.display = 'flex';
+            modal.querySelector('.modal-content').style.transform = 'scale(1)';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('blog-modal');
+            modal.style.display = 'none';
+            modal.querySelector('.modal-content').style.transform = 'scale(0)';
+        }
+        
+    </script>
+
+</body>
+
+</html>

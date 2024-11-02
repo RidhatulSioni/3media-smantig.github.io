@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3MEDIA I SMAN 3 GORONTALO</title>
+
+    <!-- swiper css linked here  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- akar icon cdn linked here  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/akar-icons-fonts/1.1.22/css/akar-icons.css"
+        integrity="sha512-xM54SoWdWHNrNSYzPt1Wfsg5dyaIk0e7/biNh0jIR+pdaoWLfEAs50ig7ysS0ywbN79lrAow53uHtK3joebijA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- main css linked here  -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .program-table th,
+        .program-table td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .program-table th {
+            background-color: #8ddbff;
+        }
+
+        .highlight {
+            background-color: #8fa9ff;
+        }
+
+        .section-title {
+            background-color: #8ddbff;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            margin: auto;
+            margin-top: 2rem;
+        }
+
+        .container .info-section {
+            padding: 30px;
+            background: var(--white-clr);
+            box-shadow: 0 0 20px rgba(0 0 0 / 10%);
+            border-radius: 1rem;
+        }
+        footer {
+    padding: 5rem 10rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+footer .about-us {
+    min-width: 50rem;
+}
+
+footer .about-us .logo {
+    height: 100px;
+}
+
+footer .about-us .logo img {
+    height: 100%;
+}
+
+footer .about-us p {
+    color: #666;
+    margin: 2rem 0;
+}
+
+footer .about-us p span {
+    color: var(--primary-clr);
+}
+
+footer .about-us .icons {
+    display: flex;
+    gap: 2rem;
+}
+
+footer .about-us .icons .icon {
+    padding: 3px 8px;
+    background: var(--light-clr);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+footer .about-us .icons .icon a {
+    color: var(--primary-clr);
+    font-size: 1.8rem;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 40rem;
+}
+
+footer .links h4 {
+    color: #000;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+footer .links a {
+    font-size: 1.6rem;
+    color: #444;
+    display: block;
+}
+
+footer .links a:hover {
+    color: var(--primary-clr);
+}
+
+footer .links a:hover i {
+    color: #000;
+    margin-right: .5rem;
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- header section starts here -->
+<nav>
+    <div class="nav-bar">
+      <i class="bx bx-menu sidebarOpen"></i>
+      <span class="logo navLogo"><a href="index.html">3MEDIA</a></span>
+      <div class="menu">
+        <div class="logo-toggle">
+          <span class="logo"><a href="index.html">3MEDIA</a></span>
+          <i class="bx bx-x siderbarClose"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li class="dropdown">
+            <a href="Tentang Kami.html">Tentang Kami<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="Tentang Kami.html">Visi Misi</a></li>
+              <li><a href="Program Kerja.html">Program Kerja</a></li>
+              <li><a href="gallery.html">Dokumentasi</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="blogs.html">Berita<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="blogs.html">Info 3media</a></li>
+              <li><a href="Info Smantig.html">Info Smantig</a></li>
+            </ul>
+          </li>
+          <li><a href="/Belanja/Website/index.html">Belanja</a></li>
+          <li><a href="/contact.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+        <div class="searchBox">
+          <div class="searchToggle">
+            <i class="bx bx-x cancel"></i>
+            <i class="bx bx-search search"></i>
+          </div>
+          <div class="search-field">
+            <input type="text" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- header section ends here -->`
+
+    <section class="about-us content-section mt-100">
+        <h1 class="heading">
+            3MEDIA SMAN 3 GORONTALO - Program Kerja
+        </h1>
+
+        <div class="container">
+            <div class="info-section">
+                <h2>Program Kerja 2024/2025</h2>
+
+                <!-- Table for Program Kerja -->
+                <table class="program-table">
+                    <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>PROGRAM KERJA</th>
+                            <th>DIVISI</th>
+                            <th colspan="12">TARGET PELAKSANAAN</th>
+                            <th>KETERANGAN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="section-title">
+                            <td colspan="3">JANGKA PENDEK</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>dst</td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Pembentukan tim produksi</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Melakukan sosialisasi bahaya hoax dan cara mencegahnya</td>
+                            <td>FOTO & EDITING</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>3</td>
+                            <td> Membuat video profil 3media</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>4</td>
+                            <td>Membenahi ruangan baru</td>
+                            <td>3MEDIA</td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>5</td>
+                            <td>Pelatihan bagi setiap divisi</td>
+                            <td>PJ DIVISI</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <!-- Additional rows from the second image -->
+                        <tr class="section-title">
+                            <td colspan="18">JANGKA MENENGAH</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Berkolaborasi bersama multimedia dari sekolah lain</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Memperingati hari-hari besar</td>
+                            <td>DESAIN</td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>8</td>
+                            <td>Mendokumentasikan acara sekolah</td>
+                            <td>FOTO & EDITING</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>9</td>
+                            <td>Pembuatan dan pengupdatan website serta aplikasi</td>
+                            <td>FOTOGRAPHY</td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>10</td>
+                            <td>Mengadakan kerja bakti rutin</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>11</td>
+                            <td>Berkolaborasi bersama perpustakaan</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>12</td>
+                            <td>Membuat workshop di sekolah sekolah</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <!-- Continue for other rows -->
+                        <tr class="section-title">
+                            <td colspan="18">JANGKA PANJANG</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Membuat info smantig</td>
+                            <td>DESAIN & FOTO</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Podcast bersama siswa/i, guru, dan orang penting lainnya</td>
+                            <td>FOTO & EDITING</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>15</td>
+                            <td>Membuat video edukasi </td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>16</td>
+                            <td>sosial media 3media</td>
+                            <td>DESAIN</td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>17</td>
+                            <td>berokolaborasi bersama organisasi sekolah</td>
+                            <td>3MEDIA</td>
+                            <td ></td>
+                            <td></td>
+                            <td></td>
+                            <td"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>18</td>
+                            <td>Berkolaborasi bersama hubmas smantig</td>
+                            <td>DESAIN & FOTO</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>19</td>
+                            <td>Membuat bazzar sekolah</td>
+                            <td>FOTOGRAPHY</td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td></td>
+                            <td colspan="1"></td>
+                        </tr>
+                        <tr></tr>
+                            <td>20</td>
+                            <td>Membuat Jasa di sekolah</td>
+                            <td>3MEDIA</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td class="highlight"></td>
+                            <td colspan="1"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <div class="about-us">
+            <div class="logo">
+                <img src="images/Logo Smantig.png" alt="Logo 3MEDIA">
+            </div>
+
+            <p class="paragraph">
+                &copy; 2024 <span>3MEDIA</span> SMANTIG.
+            </p>
+            
+            <div class="icons">
+                <div class="icon">
+                    <a href="https://www.facebook.com/hubmas.smantig"><i class="ai-facebook-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.instagram.com/smantig.3media/"><i class="ai-instagram-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.youtube.com/@smantig.3media"><i class="ai-youtube-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <h4>Tentang Kami :</h4>
+            <a href="blogs.html">Blog Kami</a>
+            <a href="#">Belanja</a>
+            <a href="contact.html">Hubungi Kami</a>
+        </div>
+        <div class="links">
+            <h4>Informasi Kontak :</h4>
+            <a href="https://wa.link/pib3cf"><i class="ai-phone"></i> +6281242942733  I Jeron</a>
+            <a href="https://wa.link/3r43ms"><i class="ai-phone"></i> +6289507880230 I M Hilal</a>
+            <a href="https://maps.app.goo.gl/jDUzgDySUcFvezQj9"><i class="ai-location"></i> SMA NEGERI 3 GORONTALO</a>
+        </div>
+    </footer>
+
+    <!-- gsap cdn linked hare  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- gsap scroll trigger cdn linked hare  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- main js linked hare  -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

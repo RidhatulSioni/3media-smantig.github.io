@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 MEDIA I SMAN 3 GORONTALO</title>
+
+    <!-- swiper css linked hare  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- akar icon cdn linked hare  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/akar-icons-fonts/1.1.22/css/akar-icons.css"
+        integrity="sha512-xM54SoWdWHNrNSYzPt1Wfsg5dyaIk0e7/biNh0jIR+pdaoWLfEAs50ig7ysS0ywbN79lrAow53uHtK3joebijA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- main css linked hare  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- animation css linked hare  -->
+     <link rel="stylesheet" href="css/animation.css">
+     <!-- swiper css linked hare  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- akar icon cdn linked hare  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/akar-icons-fonts/1.1.22/css/akar-icons.css"
+        integrity="sha512-xM54SoWdWHNrNSYzPt1Wfsg5dyaIk0e7/biNh0jIR+pdaoWLfEAs50ig7ysS0ywbN79lrAow53uHtK3joebijA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- HTML: Modal Pengumuman -->
+<div class="modal" id="announcementModal">
+
+    <div class="modal-close-overlay" id="modalOverlay"></div>
+  
+    <div class="modal-content">
+  
+      <button class="modal-close-btn" id="modalCloseBtn">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+  
+      
+  
+      <div class="announcement">
+  
+        <h3 class="announcement-title">📢 Pengumuman Penting!</h3>
+  
+        <p class="announcement-desc">
+          Kami telah membuka pendaftaran untuk <b>3 Media Smantig</b>. Daftarkan akun Instagram, You Tube, dan Facebook Anda sekarang untuk mendapatkan update terbaru sepurar 3MEDIA SMANTIG!
+        </p>
+  
+        <button class="btn-modern" id="btnCloseModal">Tutup Pengumuman</button>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  
+  <!-- CSS: Styling Modal dengan Animasi -->
+  <style>
+    /* Modal container */
+    .modal {
+      display: none; /* Modal disembunyikan pada awalnya */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    /* Modal content */
+    .modal-content {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      text-align: center;
+      transform: scale(0); /* Untuk animasi zoom */
+      transition: transform 0.5s ease; /* Animasi zoom */
+    }
+  
+    /* Setelah modal aktif, terapkan zoom */
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+  
+    /* Gambar di dalam modal */
+    .modal img {
+      margin-bottom: 20px;
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Tombol close di pojok kanan */
+    .modal-close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    /* Judul pengumuman */
+    .announcement-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    /* Deskripsi pengumuman */
+    .announcement-desc {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+  
+    /* Tombol modern */
+    .btn-modern {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .btn-modern:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  
+  <!-- JavaScript: Muncul setelah scroll dan animasi zoom -->
+  <script>
+    // Fungsi untuk membuka modal
+    function openModal() {
+      const modal = document.getElementById('announcementModal');
+      modal.style.display = 'flex'; // Tampilkan modal
+      setTimeout(() => {
+        modal.classList.add('active'); // Aktifkan animasi zoom
+      }, 100); // Delay untuk animasi zoom
+    }
+  
+    // Fungsi untuk menutup modal
+    function closeModal() {
+      const modal = document.getElementById('announcementModal');
+      modal.classList.remove('active'); // Hapus kelas active (animasi zoom out)
+      setTimeout(() => {
+        modal.style.display = 'none'; // Sembunyikan modal setelah animasi
+      }, 500); // Delay sebelum modal hilang agar animasi selesai
+    }
+  
+    // Membuka modal setelah pengguna menggulir ke bawah
+    window.onscroll = function() {
+      if (window.scrollY > 100) { // Jika scroll lebih dari 100px
+        openModal();
+        window.onscroll = null; // Agar modal hanya muncul sekali
+      }
+    };
+  
+    // Tutup modal saat tombol "X" atau "Tutup Pengumuman" diklik
+    document.getElementById('modalCloseBtn').onclick = closeModal;
+    document.getElementById('btnCloseModal').onclick = closeModal;
+    document.getElementById('modalOverlay').onclick = closeModal;
+  </script>
+  
+  
+    <!-- header section starts here -->
+<nav>
+    <div class="nav-bar">
+      <i class="bx bx-menu sidebarOpen"></i>
+      <span class="logo navLogo"><a href="index.html">3MEDIA</a></span>
+      <div class="menu">
+        <div class="logo-toggle">
+          <span class="logo"><a href="index.html">3MEDIA</a></span>
+          <i class="bx bx-x siderbarClose"></i>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li class="dropdown">
+            <a href="Tentang Kami.html">Tentang Kami<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="Tentang Kami.html">Visi Misi</a></li>
+              <li><a href="Program Kerja.html">Program Kerja</a></li>
+              <li><a href="gallery.html">Dokumentasi</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="blogs.html">Berita<span class="arrow">▼</span></a>
+            <ul class="dropdown-content">
+              <li><a href="blogs.html">Info 3media</a></li>
+              <li><a href="Info Smantig.html">Info Smantig</a></li>
+            </ul>
+          </li>
+          <li><a href="/Belanja/Website/index.html">Belanja</a></li>
+          <li><a href="/contact.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="darkLight-searchBox">
+        <div class="dark-light">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+        <div class="searchBox">
+          <div class="searchToggle">
+            <i class="bx bx-x cancel"></i>
+            <i class="bx bx-search search"></i>
+          </div>
+          <div class="search-field">
+            <input type="text" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- header section ends here -->`
+  
+
+    <!-- home section starts hare  -->
+    <section class="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box box1">
+                    <div class="content">
+                        <h1>SMANTIG INFORMATION CENTER</h1>
+                        <p class="paragraph">Disponsori Oleh : SMA NEGERI 3 GORONTALO </p>
+                        <div class="button">
+                            <a href="Tentang Kami.html">Tentang Kami</a>
+                            <a href="contact.html">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- home section ends hare  -->
+
+    <!-- service section starts hare  -->   
+    <section class="service">
+        <div class="box">
+            <div class="icon">
+                <img src="images/Logo Fotografi.png" alt="">
+            </div>
+            <h5>Fotografi</h5>
+            <p>Divisi Fotografi 3media adalah tim yang berdedikasi untuk menangkap momen-momen penting dan mengabadikannya melalui lensa kamera. Dengan keahlian dalam berbagai teknik fotografi, mereka mampu menghasilkan gambar yang tidak hanya indah secara visual, tetapi juga bercerita. Setiap foto yang dihasilkan oleh divisi ini mencerminkan kreativitas dan profesionalisme, memastikan bahwa setiap momen yang diabadikan dapat dinikmati dan dikenang oleh semua orang.</p>
+        </div>
+        <div class="box">
+            <div class="icon">
+                <img src="images/Logo Desain Grafis.png" alt="">
+            </div>
+            <h5>Desan Grafis</h5>
+            <p>Divisi Desain Grafis 3media adalah tim kreatif yang bertanggung jawab untuk menciptakan elemen visual yang menarik dan efektif. Mereka menggunakan berbagai elemen seperti gambar, teks, warna, dan bentuk untuk menyampaikan pesan yang jelas dan menarik. Dengan keahlian dalam berbagai software desain, tim ini mampu menghasilkan karya yang tidak hanya estetis tetapi juga fungsional, membantu memperkuat identitas merek dan komunikasi visual perusahaan.</p>
+        </div>
+        <div class="box">
+            <div class="icon">
+                <img src="images/Logo Editor.png" alt="">
+            </div>
+            <h5>Editor</h5>
+            <p>Divisi Editor 3media adalah tim yang bertanggung jawab untuk memastikan semua konten tertulis, visual, atau multimedia memenuhi standar kualitas tertinggi. Mereka bekerja sama dengan penulis, jurnalis, fotografer, dan desainer untuk menyempurnakan cerita, artikel, atau proyek, meningkatkan kualitas dan efektivitas komunikasi dengan audiens yang dituju1. Dengan keahlian dalam mengedit dan merevisi berbagai materi.</p>
+        </div>
+    </section>
+
+    <!-- service section ends hare  -->
+
+
+    <!-- demo section starts hare  -->
+
+    <section class="demo">
+        <div class="video" id="playVideo">
+            <video poster="images/Logo 3MEDIA terbaru.jpg">
+                <source src="videos/FILM PENDEK_HILAL RAMADAN LATO_SMAN 3 KOTA GORONTALO_ PROVINSI GORONTALO (1080p, h264, youtube).mp4">
+            </video>
+            <img id="playIcon" src="images/icons8-play-50.png" alt="">
+        </div>
+        <div class="box">
+            <div class="content">
+                <h4>SELAMAT DATANG</h4>
+                <p class="paragraph">Kami dengan bangga mempersembahkan platform resmi 3MEDIA SMA Negeri 3 Gorontalo! Di sini, Anda akan menemukan berbagai informasi menarik seputar acara-acara besar yang kami selenggarakan. Nikmati koleksi foto-foto acara yang memukau dan jadikan momen berharga tersebut sebagai kenangan tak terlupakan. Selain itu, jangan lewatkan blog kami yang penuh dengan konten informatif dan inspiratif. Kami berkomitmen untuk berbagi kisah dan pengalaman yang dapat memperkaya pengetahuan dan wawasan Anda. Terima kasih telah mengunjungi kami, dan selamat menjelajahi!.</p>
+
+            </div>
+            <div class="button">
+                <a href="Tentang Kami.html">Jelajahi Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- demo section ends hare  -->
+
+    <!-- home gallery section starts hare  -->
+
+    <section class="home-gallery">
+        <div class="container">
+            <div class="container-box">
+                <h2 class="heading">DOKUMENTASI 3MEDIA SMANTIG</h2>
+                <div class="content">
+                    <p>Ingin tahu lebih lanjut tentang dokumentasi lengkap kegiatan 3MEDIA SMANTIG. Tekan tombol Jelajahi Sekarang untuk melihat berbagai foto, video, dan laporan kegiatan yang menarik</p>
+                    <a href="gallery.html">Jelajahi Sekarang<i class="ai-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="gallery">
+                <div class="box">
+                    <img src="images/Pertemuan 1.jpg" alt="">
+                    <div class="text">
+                        <h2>Pertemuan 1</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/Pertemuan 2.jpg" alt="">
+                    <div class="text">
+                        <h2>Pertemuan 2</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/Pertemuan 3.jpg" alt="">
+                    <div class="text">
+                        <h2>Pertemuan 3</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/Pertemuan 4.jpg" alt="">
+                    <div class="text">
+                        <h2>Pertemuan 4</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- home gallery section ends hare  -->
+
+    <div class="container">
+        <div class="faq-section">
+            <h1>Beberapa Hal yang Sering Ditanyakan Kepada Kami</h1>
+            <p>Kamu punya pertanyaan seputar produk atau layanan kami? Jangan ragu untuk bertanya! Ini dia beberapa pertanyaan yang sering ditanyakan pelanggan kami:</p>
+    
+            <div class="faq-items">
+                <div class="faq-item">
+                    <button>Apa Itu 3MEDIA SMANTIG?</button>
+                    <div class="faq-item-content">
+                        3MEDIA SMANTIG adalah sebuah komunitas belajar yang dinamis dan inspiratif. Di sini, siswa tidak hanya belajar, tetapi juga berkreasi, berinovasi, dan tumbuh bersama. 3MEDIA adalah bukti nyata bahwa sekolah tidak hanya tempat untuk menuntut ilmu, tetapi juga tempat untuk mengembangkan diri dan meraih mimpi.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button>Tujuan 3MEDIA SMANTIG?</button>
+                    <div class="faq-item-content">
+                        Tujuan di dirikannya 3 Media yaitu menjadi tempat untuk mengembangkan bakat dan hobi yang dimiliki siswa, dan dengan adanya 3 Media diharapkan dapat mewadahi miant dan potensi siswa serta dapat membantu Hubungan Masyarakat dalam mendokumentasi setiap acara sekolah sean menyajiakan bertia/informasi tentang SMA Negeri 3 Gorontalo
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button>3MEDIA ngapain aja?</button>
+                    <div class="faq-item-content">
+                        Kegiatannya dokumentasiacara sekolah
+                    </div>
+                </div>
+            </div>
+    
+            <a href="https://wa.link/pib3cf" class="contact-btn">Kontak</a>
+        </div>
+    </div>
+    
+    <!-- feedback section starts hare  -->
+
+    <section class="feedback">
+        <div class="text">
+            <h4 class="heading">TESTIMONI SISWA</h4>
+            <p class="paragraph">Suara langsung peserta didik yang berbagi pengalaman belajar dan berkembang di 3media.</p>
+        </div>
+
+        <div class="swiper feedback-card">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide content-box">
+                    <p class="paragraph">
+                        Atmosfer belajar di 3media sangat menyenangkan. Semua anggota tim sangat ramah dan saling mendukung. Saya merasa bebas berekspresi dan mencoba hal-hal baru. Selain itu, fasilitas yang disediakan juga lengkap, sehingga saya bisa belajar dengan nyaman dan maksimal. 3media bukan hanya sekadar tempat belajar, tapi juga seperti keluarga kedua bagi saya.
+                    </p>
+
+                    <div class="profile">
+                        <img src="images/User Testimoni.png" alt="">
+                        <div class="user">
+                            <h2>Ridhatul Sioni</h2>
+                            <p>Siswa X.7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide content-box">
+                    <p class="paragraph">
+                        Salah satu hal yang paling saya suka dari 3media adalah banyaknya kesempatan untuk praktik langsung. Kami sering diajak untuk mengikuti berbagai macam proyek, baik itu pembuatan video promosi, desain poster, atau bahkan pameran fotografi. Pengalaman-pengalaman ini sangat berharga karena membuat saya lebih siap menghadapi dunia kerja.
+                    </p>
+
+                    <div class="profile">
+                        <img src="images/User Testimoni.png" alt="">
+                        <div class="user">
+                            <h2>Gevin Chandra</h2>
+                            <p>Siswa X.7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide content-box">
+                    <p class="paragraph">
+                        Berkat 3media, minat saya di bidang kreatif semakin terasah. Saya jadi lebih percaya diri dalam mengekspresikan diri melalui karya-karya saya. Selain itu, ilmu yang saya dapatkan di sini juga sangat bermanfaat untuk kehidupan sehari-hari. Saya bisa mengedit video untuk tugas sekolah, membuat desain poster untuk acara sekolah, dan masih banyak lagi.
+                    </p>
+
+                    <div class="profile">
+                        <img src="images/User Testimoni.png" alt="">
+                        <div class="user">
+                            <h2>Thariq Yusuf</h2>
+                            <p>Siswa X.7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide content-box">
+                    <p class="paragraph">
+                        Selama bergabung dengan 3media, kemampuan fotografi saya meningkat pesat. Dulu, saya hanya bisa mengambil gambar seadanya. Sekarang, saya sudah bisa mengatur komposisi, pencahayaan, dan memilih sudut pandang yang tepat. Kelas-kelas yang interaktif dan tugas-tugas yang menantang membuat saya terus belajar dan berkreasi. 
+                    </p>
+
+                    <div class="profile">
+                        <img src="images/User Testimoni.png" alt="">
+                        <div class="user">
+                            <h2>Hilal Lato</h2>
+                            <p>Siswa Smantig</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- feedback section ends hare  -->
+
+    
+
+    <!-- footer section starts hare  -->
+
+    <footer>
+        <div class="about-us">
+            <div class="logo">
+                <img src="images/Logo Smantig.png" alt="Logo 3MEDIA">
+            </div>
+
+            <p class="paragraph">
+                &copy; 2024 <span>3MEDIA</span> SMANTIG.
+            </p>
+            
+            <div class="icons">
+                <div class="icon">
+                    <a href="https://www.facebook.com/hubmas.smantig"><i class="ai-facebook-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.instagram.com/smantig.3media/"><i class="ai-instagram-fill"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="https://www.youtube.com/@smantig.3media"><i class="ai-youtube-fill"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="links">
+            <h4>Tentang Kami :</h4>
+            <a href="blogs.html">Blog Kami</a>
+            <a href="#">Belanja</a>
+            <a href="contact.html">Hubungi Kami</a>
+        </div>
+        <div class="links">
+            <h4>Informasi Kontak :</h4>
+            <a href="https://wa.link/pib3cf"><i class="ai-phone"></i> +6281242942733  I Jeron</a>
+            <a href="https://wa.link/3r43ms"><i class="ai-phone"></i> +6289507880230 I M Hilal</a>
+            <a href="https://maps.app.goo.gl/jDUzgDySUcFvezQj9"><i class="ai-location"></i> SMA NEGERI 3 GORONTALO</a>
+        </div>
+    </footer>
+
+    <!-- footer section ends hare  -->
+
+
+
+
+    
+
+    <!-- swiper js linked hare  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap cdn linked hare  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- gsap scroll trigger cdn linked hare  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- js for swipe feedback cards  -->
+     <script src="js/swiper.js"></script>
+
+     <!-- gsap animation js linked hare  -->
+      <script src="js/animaiton.js"></script>
+
+    <!-- main js linked hare  -->
+    <script src="js/script.js"></script>
+    <script>
+        // JavaScript untuk toggle FAQ
+        const faqButtons = document.querySelectorAll('.faq-item button');
+    
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
+                if (button.classList.contains('active')) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        });
+    
+        
+    </script>
+    
+</body>
+
+</html>
